@@ -1,0 +1,86 @@
+﻿<Window x:Class="AttachmentSaver.SettingsWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AttachmentSaver"
+             mc:Ignorable="d"
+             Title="Opslagprofielen"
+             Closing="OnClose"
+             Height="410" Width="510">
+    
+    <Grid Background="White" Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.8*"/>
+            <ColumnDefinition Width="2.6*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Column="0" Grid.RowSpan="7" Margin="5">
+            <Label DockPanel.Dock="Top" Padding="2" Content="Opslagprofielen:"/>
+            <ListBox Name="profilesListbox" SelectionChanged="OnProfileSelectionChanged"/>
+        </DockPanel>
+
+
+
+        <StackPanel Grid.Column="1" Grid.Row="0" Margin="5">
+            <Label Padding="2" Content="Naam:"/>
+            <TextBox Height="20" Name="nameTextbox" LostFocus="nameTextbox_LostFocus"/>
+        </StackPanel>
+
+
+
+        <StackPanel Grid.Column="1" Grid.Row="1" Margin="5">
+            <Label Padding="2" Content="Verzender:"/>
+            <TextBox Name="senderTextbox" LostFocus="senderTextbox_LostFocus"/>
+        </StackPanel>
+
+
+
+        <StackPanel Grid.Column="1" Grid.Row="2" Margin="5">
+            <Label Padding="2" Content="Bestandsnaam-filter (RegEx):"/>
+            <TextBox Height="20" Name="filenameTextbox" LostFocus="filenameTextbox_LostFocus"/>
+        </StackPanel>
+
+
+
+        <StackPanel Grid.Column="1" Grid.Row="3" Margin="5">
+            <Label Padding="2" Content="Bestandsextensies:"/>
+            <DockPanel>
+                <TextBlock Text=". "/>
+                <TextBox Height="20" Name="fileExtensionTextbox" KeyDown="fileExtensionTextbox_KeyDown"/>
+            </DockPanel>
+        </StackPanel>
+
+        <Button Content="Toevoegen" Grid.Column="2" Grid.Row="3" Height="20" Margin="5" VerticalAlignment="Bottom" Name="addFileExtension" Click="AddFileExtension"/>
+
+        <ListBox Grid.Column="1" Grid.Row="4" Margin="5" Name="fileExtensionsListbox"/>
+
+        <Button Content="Verwijderen" Grid.Column="2" Grid.Row="4" Height="20" Margin="5" VerticalAlignment="Top" Name="removeFileExtension" Click="RemoveFileExtension"/>
+
+
+
+        <StackPanel Grid.Column="1" Grid.Row="5" Margin="5">
+            <TextBlock Padding="2" Text="Locatie:  "/>
+            <TextBox Padding="2" Name="fileLocationTextbox" ToolTip="{Binding RelativeSource={RelativeSource Self}, Path=Text}"/>
+        </StackPanel>
+        
+        <Button Content="Bladeren..." Grid.Column="2" Grid.Row="5" Height="20" Margin="5" VerticalAlignment="Bottom" Click="Browse"/>
+
+
+        <DockPanel Grid.Column="1" Grid.Row="6" Margin="5,10" HorizontalAlignment="Right">
+            <Button Content="Verwijderen" Click="Delete" Width="80" Margin="0,0,10,0"/>
+            <Button Content="Opslaan" Click="Save" Width="80"/>
+        </DockPanel>
+        <Button Content="Annuleren" Grid.Column="2" Grid.Row="8" Height="26" Margin="5,10" Click="Cancel"/>
+    </Grid>
+</Window>

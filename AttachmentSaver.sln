@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttachmentSaver", "AttachmentSaver\AttachmentSaver.csproj", "{DD214BE3-F15D-4E9A-9E2A-DE38145609C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD214BE3-F15D-4E9A-9E2A-DE38145609C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD214BE3-F15D-4E9A-9E2A-DE38145609C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD214BE3-F15D-4E9A-9E2A-DE38145609C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD214BE3-F15D-4E9A-9E2A-DE38145609C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {00BC0457-605F-42E1-B732-E6B75EB086FE}
+	EndGlobalSection
+EndGlobal
