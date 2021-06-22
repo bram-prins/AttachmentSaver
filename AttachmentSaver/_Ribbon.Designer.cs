@@ -43,7 +43,7 @@ namespace AttachmentSaver
             this.separator2 = this.Factory.CreateRibbonSeparator();
             this.manageProfilesBtn = this.Factory.CreateRibbonButton();
             this.separator3 = this.Factory.CreateRibbonSeparator();
-            this.infoLabel = this.Factory.CreateRibbonLabel();
+            this.setLastRunBtn = this.Factory.CreateRibbonButton();
             this.viewLogBtn = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
@@ -64,7 +64,7 @@ namespace AttachmentSaver
             this.group1.Items.Add(this.separator2);
             this.group1.Items.Add(this.manageProfilesBtn);
             this.group1.Items.Add(this.separator3);
-            this.group1.Items.Add(this.infoLabel);
+            this.group1.Items.Add(this.setLastRunBtn);
             this.group1.Items.Add(this.viewLogBtn);
             this.group1.Name = "group1";
             // 
@@ -107,10 +107,11 @@ namespace AttachmentSaver
             // 
             this.separator3.Name = "separator3";
             // 
-            // infoLabel
+            // setLastRunBtn
             // 
-            this.infoLabel.Label = "Laatst geïmporteerd om: -";
-            this.infoLabel.Name = "infoLabel";
+            this.setLastRunBtn.Label = "Laatst geïmporteerd om: -";
+            this.setLastRunBtn.Name = "setLastRunBtn";
+            this.setLastRunBtn.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.setLastRunBtn_Click);
             // 
             // viewLogBtn
             // 
@@ -142,8 +143,8 @@ namespace AttachmentSaver
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator1;
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator2;
         internal Microsoft.Office.Tools.Ribbon.RibbonSeparator separator3;
-        internal Microsoft.Office.Tools.Ribbon.RibbonLabel infoLabel;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton viewLogBtn;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton setLastRunBtn;
     }
 
     partial class ThisRibbonCollection

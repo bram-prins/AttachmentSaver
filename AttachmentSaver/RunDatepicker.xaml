@@ -1,0 +1,17 @@
+﻿<Window x:Class="AttachmentSaver.RunDatepicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AttachmentSaver"
+             mc:Ignorable="d" 
+             Height="135" Width="300">
+    <StackPanel Background="White" Margin="5">
+        <Label Margin="5,0" Content="Kies een datum vanaf wanneer je wilt importeren:"/>
+        <DatePicker Margin="5,0" Name="datePicker"/>
+        <DockPanel Margin="10" Width="180">
+            <Button Margin="5" Height="22" Width="80" Content="OK" Name="confirm" Click="confirm_Click"/>
+            <Button Margin="5" Height="22" Width="80" Content="Annuleren" Name="cancel" Click="cancel_Click"/>
+        </DockPanel>
+    </StackPanel>
+</Window>

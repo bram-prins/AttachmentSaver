@@ -59,9 +59,7 @@ namespace AttachmentSaver
 
         private void ManageProfiles_Click(object sender, RibbonControlEventArgs e)
         {
-            SettingsWindow settings = new SettingsWindow();
-            settings.Show();
-
+            new SettingsWindow().Show();
             manageProfilesBtn.Enabled = false;
         }
 
@@ -85,12 +83,17 @@ namespace AttachmentSaver
             if (settings.lastFailed > 0)
                 text += settings.lastFailed + "bestanden gefaald.";
 
-            infoLabel.Label = text;
+            setLastRunBtn.Label = text;
         }
 
         private void ViewLogBtn_Click(object sender, RibbonControlEventArgs e)
         {
             System.Diagnostics.Process.Start(Directory.GetCurrentDirectory() + "\\log.txt");
+        }
+
+        private void setLastRunBtn_Click(object sender, RibbonControlEventArgs e)
+        {
+            new RunDatepicker().Show();
         }
     }
 }
