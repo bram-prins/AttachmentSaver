@@ -27,10 +27,13 @@ namespace AttachmentSaver
 
         private void confirm_Click(object sender, RoutedEventArgs e)
         {
-            var settings = Properties.Settings.Default;
-            settings.lastRun = datePicker.DisplayDate;
-            settings.Save();
-            Globals.Ribbons._Ribbon.setLastRunBtn.Label = $"Laatst geïmporteerd om: {datePicker.DisplayDate}";
+            if (datePicker.SelectedDate != null)
+            {
+                var settings = Properties.Settings.Default;
+                settings.lastRun = (DateTime)datePicker.SelectedDate;
+                settings.Save();
+                Globals.Ribbons._Ribbon.setLastRunBtn.Label = $"Laatst geïmporteerd om: {datePicker.SelectedDate}";
+            }
             Hide();
         }
 
